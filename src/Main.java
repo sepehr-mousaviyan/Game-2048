@@ -17,7 +17,7 @@ public class Main {
         System.out.print("\u2500");
         System.out.print("\u2500");
         System.out.print("\u2500");
-//        String[][] Table = new String [lenghX][lenghY];
+        String[][] Table = new String [lenghX][lenghY];
 //        for(int j = 0; j < lenghY; j++){
 //            for(int i = 0; i < lenghY; i++){
 //                if(j == 0){
