@@ -300,7 +300,7 @@ public class Back {
     }
     public static void rand(int lenghX, int lenghY, int[][] pow){
         boolean flag = true;
-        Random rand = new Random();
+        Random rand = new Random(500);
         while(flag){
             int randomX = rand.nextInt(lenghX);
             int randomY = rand.nextInt(lenghY);
