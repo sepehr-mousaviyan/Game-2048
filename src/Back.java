@@ -363,14 +363,22 @@ public class Back {
         }
         return isEnd;
     }
-    public static void clearScreen(){
+    private static void clearScreenWindows(){
         for(int i = 0; i < 100; i++){
             System.out.print("\n");
         }
     }
-    public static void clearScreenPro() {
+    private static void clearScreenUnix() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
+    }
+    public static void clearScreen(String UnixOs) {
+        if(UnixOs.equals("y")){
+            Back.clearScreenUnix();
+        }
+        else{
+            Back.clearScreenWindows();
+        }
     }
 }
 

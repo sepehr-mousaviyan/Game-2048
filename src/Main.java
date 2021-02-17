@@ -3,11 +3,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Back.clearScreenPro();
-        menue();
+        System.out.print("Are you running this game in Unix-based os?(y/n) ");
+        Scanner inStrem = new Scanner(System.in);
+        String UnixOs = inStrem.next();
+        Back.clearScreen(UnixOs);
+        menu(UnixOs);
 
     }
-    public static void start(final int lenghX, final int lenghY){
+    public static void start(final int lenghX, final int lenghY, String UnixOs){
         final int base = 2;
 
         String[][] Table= Back.makeTable(lenghX, lenghY);
@@ -26,7 +29,7 @@ public class Main {
                 Back.rand(lenghX, lenghY, pow);
             }
             try{Thread.sleep(1000);}catch(InterruptedException err){System.out.println(err);}
-            Back.clearScreenPro();
+            Back.clearScreen(UnixOs);
             int highestValue = Back.highestValue(lenghX, lenghY, pow);
             System.out.printf("Highest value: %d\n",(int) Math.pow(base, highestValue));
             System.out.printf("Score: %d\n",Back.score(lenghX, lenghY, pow, base));
@@ -34,7 +37,7 @@ public class Main {
             Back.print(lenghX, lenghY, Table);
             isEnd = Back.checkOver(lenghX, lenghY, pow);
             if(isEnd){
-                Back.clearScreenPro();
+                Back.clearScreen(UnixOs);
                 highestValue = Back.highestValue(lenghX, lenghY, pow);
                 System.out.printf("Highest value: %d\n",(int) Math.pow(base, highestValue));
                 System.out.printf("Score: %d\n",Back.score(lenghX, lenghY, pow, base));
@@ -43,7 +46,7 @@ public class Main {
             }
         }
     }
-    public static void menue(){
+    public static void menu(String UnixOs){
         System.out.print("1- classic(4*4)\n2- costum(n*m)\nwich one? ");
         Scanner inStrem = new Scanner(System.in);
         int choise = inStrem.nextInt();
@@ -54,16 +57,16 @@ public class Main {
         if(choise == 1){
             final int lenghX = 4;
             final int lenghY = 4;
-            Back.clearScreenPro();
-            start(lenghX, lenghY);
+            Back.clearScreen(UnixOs);
+            start(lenghX, lenghY, UnixOs);
         }
         if(choise == 2){
             System.out.print("Number of culmns: ");
             final int lenghX = inStrem.nextInt();
             System.out.print("Number of rows: ");
             final int lenghY = inStrem.nextInt();
-            Back.clearScreenPro();
-            start(lenghX, lenghY);
+            Back.clearScreen(UnixOs);
+            start(lenghX, lenghY, UnixOs);
         }
 
     }
