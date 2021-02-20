@@ -3,13 +3,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.print("Are you running this game in Unix-based os?(y/n) ");
-//        Scanner inStrem = new Scanner(System.in);
-//        String UnixOs = inStrem.next();
-//        Back.clearScreen(UnixOs);
-//        menu(UnixOs);
-        DisplayGraphics.mainn();
-
+        System.out.print("Are you running this game in Unix-based os?(y/n) ");
+        Scanner inStrem = new Scanner(System.in);
+        String UnixOs = inStrem.next();
+        Back.clearScreen(UnixOs);
+        menu(UnixOs);
     }
     public static void start(final int lenghX, final int lenghY, String UnixOs){
         final int base = 2;
